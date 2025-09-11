@@ -1,0 +1,1 @@
+nominert_1=input("skriv inn navnet til første nominert: ")
