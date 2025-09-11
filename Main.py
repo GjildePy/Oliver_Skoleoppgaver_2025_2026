@@ -33,7 +33,7 @@ while True:
         if voter in votes_id: # Hvis "IDen" er gyldig printer den at du kan stemme og spør deg hva du vil stemme 
             print("Du er en velger ")
             votes_id.remove(voter) #Fjerner "IDen" som ble brukt så den ikke kan bli brukt på nytt
-            vote = int(input(f"Legg inn din stemme, 1 for {nominert_1}, 2 for {nominert_2}: ")) # Her velger du hvem av de to nominerte di stemmer
+            vote = int(input(f"Legg inn din stemme, 1 for {nominert_1}, 2 for {nominert_2}: ")) # Her velger du hvem av de to nominerte du stemmer. "F" gjør det til en F-string
 
             if vote==1: # Hvis stemme går til 1, får 1. nominerte ett poeng
                 nom_1_votes+=1
