@@ -45,3 +45,5 @@ while True:
     
             else: # Hvis brukeren skriver inn noe annet enn 1 eller 2
                 print("Du er ikke velger, eller så har du allerede stemt")
+
+                #Kilde: https://youtu.be/KqyZc6uR9QU?si=iv0IS2KaU-IL1Kkz
