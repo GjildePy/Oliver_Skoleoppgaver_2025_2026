@@ -13,34 +13,35 @@ num_of_voter=len(votes_id)
 
 while True:
     if votes_id == []:
-        print("Avstemningssesjonen er over")
+        print("Avstemningssesjonen er over!")
         if nom_1_votes>nom_2_votes: # Hvis 1. nominerte har større verdi enn 2. nominerte printer den at nominert_1 har vunnet valget
             prosent = (nom_1_votes / num_of_voter) * 100 # Ganger det med 100 for å få prosent
-            print(nominert_1,"har vunnet valget","med",prosent,"% stemmer")
+            print(nominert_1,"har vunnet valget","med",prosent,"% stemmer!")
             break
 
         elif nom_1_votes<nom_2_votes: # Det samme som den over bare med motsatt nominert
             prosent = (nom_2_votes / num_of_voter) * 100
-            print(nominert_2,"har vunnet valget","med",prosent,"% stemmer")
+            print(nominert_2,"har vunnet valget","med",prosent,"% stemmer!")
             break
 
         else:
             print("Valget ble uavgjort!")
+            break # Break er for å stoppe den til å gå i loop
 
     else:
-        voter=int(input("Skriv inn velger-ID-en din ")) # Her skriver du "IDen" din og hvis du ikke skriver inn en gyldig "ID" eller en ID som allerede er brukt får du ikke stemmet.
+        voter=int(input("Skriv inn velger-ID-en din, 1-10: ")) # Her skriver du "IDen" din og hvis du ikke skriver inn en gyldig "ID" eller en ID som allerede er brukt får du ikke stemmet.
         if voter in votes_id: # Hvis "IDen" er gyldig printer den at du kan stemme og spør deg hva du vil stemme 
             print("Du er en velger ")
             votes_id.remove(voter) #Fjerner "IDen" som ble brukt så den ikke kan bli brukt på nytt
-            vote = int(input("Legg inn din stemme, 1 eller 2: ")) # Her velger du hvem av de to nominerte di stemmer
+            vote = int(input(f"Legg inn din stemme, 1 for {nominert_1}, 2 for {nominert_2}: ")) # Her velger du hvem av de to nominerte di stemmer
 
             if vote==1: # Hvis stemme går til 1, får 1. nominerte ett poeng
                 nom_1_votes+=1
-                print("Takk for at du avga din stemme")
+                print("Takk for at du avga din stemme!")
 
             elif vote==2:
                 nom_2_votes+=1
-                print("Takk for at du avga din stemme")
+                print("Takk for at du avga din stemme!")
     
             else: # Hvis brukeren skriver inn noe annet enn 1 eller 2
                 print("Du er ikke velger, eller så har du allerede stemt")
