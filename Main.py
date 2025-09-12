@@ -1,4 +1,4 @@
-#nominert_1/2 er en variabel som blir lagd
+#nominert_1/2 er en variabel som blir lagd og blir to av de partiene du kan stemme
 nominert_1=input("skriv inn navnet til første nominert: ")
 nominert_2=input("skriv inn navnet til andre nominert: ")
 
