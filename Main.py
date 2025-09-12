@@ -7,7 +7,7 @@ nom_1_votes=0
 nom_2_votes=0
 
 # en liste med "ID" som du bruker når du stemmer, så det er da 10 stykker som kan stemme
-votes_id = [1,2,3,4,5,6,7,8,9,10]
+votes_id = ["1","2","3","4","5","6","7","8","9","10"]
 
 num_of_voter=len(votes_id)
 
@@ -29,7 +29,7 @@ while True:
             break # Break er for å stoppe den til å gå i loop
 
     else:
-        voter=int(input("Skriv inn velger-ID-en din, 1-10: ")) # Her skriver du "IDen" din og hvis du ikke skriver inn en gyldig "ID" eller en ID som allerede er brukt får du ikke stemmet.
+        voter=input("Skriv inn velger-ID-en din, 1-10: ") # Her skriver du "IDen" din og hvis du ikke skriver inn en gyldig "ID" eller en ID som allerede er brukt får du ikke stemmet.
         if voter in votes_id: # Hvis "IDen" er gyldig printer den at du kan stemme og spør deg hva du vil stemme 
             print("Du er en velger ")
             votes_id.remove(voter) #Fjerner "IDen" som ble brukt så den ikke kan bli brukt på nytt
@@ -43,7 +43,10 @@ while True:
                 nom_2_votes+=1
                 print("Takk for at du avga din stemme!")
     
-            else: # Hvis brukeren skriver inn noe annet enn 1 eller 2
-                print("Du er ikke velger, eller så har du allerede stemt")
+        else: # Hvis brukeren skriver inn noe annet enn 1 eller 2
+            print("Du er ikke velger, eller så har du allerede stemt")
 
                 #Kilde: https://youtu.be/KqyZc6uR9QU?si=iv0IS2KaU-IL1Kkz
+
+def id_sjekk(bruker):
+    return bruker in votes_id
