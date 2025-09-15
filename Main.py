@@ -1,3 +1,5 @@
+import csv
+
 #nominert_1/2 er en variabel som blir lagd og blir to av de partiene du kan stemme
 nominert_1=input("skriv inn navnet til første nominert: ")
 nominert_2=input("skriv inn navnet til andre nominert: ")
@@ -38,15 +40,27 @@ while True:
             if vote==1: # Hvis stemme går til 1, får 1. nominerte ett poeng
                 nom_1_votes+=1
                 print("Takk for at du avga din stemme!")
+                stemme_navn = nominert_1
+
+                with open("stemmer.csv", "a", newline="", encoding="utf-8") as fil:
+                    writer = csv.writer(fil)
+                    writer.writerow([voter, stemme_navn])
 
             elif vote==2:
                 nom_2_votes+=1
                 print("Takk for at du avga din stemme!")
+                stemme_navn = nominert_2
+
+                with open("stemmer.csv", "a", newline="", encoding="utf-8") as fil:
+                    writer = csv.writer(fil)
+                    writer.writerow([voter, stemme_navn])
     
         else: # Hvis brukeren skriver inn noe annet enn 1 eller 2
             print("Du er ikke velger, eller så har du allerede stemt")
 
-                #Kilde: https://youtu.be/KqyZc6uR9QU?si=iv0IS2KaU-IL1Kkz
-
+                
 def id_sjekk(bruker):
     return bruker in votes_id
+
+
+#Kilde: https://youtu.be/KqyZc6uR9QU?si=iv0IS2KaU-IL1Kkz
